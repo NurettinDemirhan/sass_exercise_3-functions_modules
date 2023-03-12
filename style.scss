@@ -1,0 +1,40 @@
+@import "function-module.scss";
+@import "mixin-module.scss" ;
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        border:1px solid red;
+        h1 {
+            color: green;
+            text-decoration: underline solid blue;   
+        }
+        .fourbox {
+            display: flex;
+            justify-content: center;  
+            .blue-text {
+                @include articles(blue, green);
+            }
+            .red-text {
+                @include articles(red, green);
+            }
+        }
+        .green-text{
+            @include articles(green, blue, px-to-rem(24))
+        }
+    }
+
+}
